@@ -1,9 +1,8 @@
 <style>
   hr{
     margin: 0px;
-    height: 10px;
-    border: 0;
-    box-shadow: inset 0 10px 10px rgba(255,140,0,0.5);
+    height: 5px;
+    background-color: orange;
   }
   div.row{
     margin-top: 5px;
@@ -56,19 +55,24 @@
   <%# メニュー・チェックインボタン %>
   <div class="row">
     <div class="col-xs-6">
-      <button class="btn btn-warning btn-block">メニュー 一覧</button>
+      <!-- <button class="btn btn-warning btn-block">メニュー 一覧</button> -->
+      <%= link_to 'メニュー 一覧', '/shops/1' , class: 'btn btn-warning btn-block' %>
     </div>
     <div class="col-xs-6">
-      <button class="btn btn-success btn-block">このお店にチェックイン</button>
+      <!-- <button class="btn btn-success btn-block">このお店にチェックイン</button> -->
+      <%= link_to 'このお店にチェックイン', '/', class: 'btn btn-success btn-block' %>
     </div>
   </div>
 
   <%# 地図・電話 %>
   <div class="row">
     <div class="col-xs-6">
-      <button class="btn btn-warning btn-block">地図</button>
+      <%# 地図表示できるようにする %>
+      <!-- <button class="btn btn-warning btn-block">地図</button> -->
+      <%= link_to '地図', map_index_path, class: 'btn btn-warning btn-block' %>
     </div>
     <div class="col-xs-6">
+      <%# 電話アプリ立ち上がるようにする %>
       <button class="btn btn-warning btn-block">電話</button>
     </div>
   </div>
@@ -86,20 +90,21 @@
       <table class="table table-bordered">
         <tbody>
           <tr>
-            <th>営業時間</th>
-            <td><%= @shop.business_time %></td>
+            <th class="col-xs-3">営業時間</th>
+            <%# 改行できるようにする、、、 %>
+            <td class="col-xs-9"><%= @shop.business_time %></td>
           </tr>
           <tr>
-            <th>定休日</th>
-            <td><%= @shop.shop_holiday %></td>
+            <th class="col-xs-3">定休日</th>
+            <td class="col-xs-9"><%= @shop.shop_holiday %></td>
           </tr>
           <tr>
-            <th>住所</th>
-            <td><%= @shop.address %></td>
+            <th class="col-xs-3">住所</th>
+            <td class="col-xs-9"><%= @shop.address %></td>
           </tr>
           <tr>
-            <th>外部リンク</th>
-            <td></td>
+            <th class="col-xs-3">外部リンク</th>
+            <td class="col-xs-9"></td>
           </tr>
         </tbody>
       </table> 

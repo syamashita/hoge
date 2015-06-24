@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'map/index'
+
   get 'shops/:id' => 'shops#show'
 
   get '/' => 'hello#view'
