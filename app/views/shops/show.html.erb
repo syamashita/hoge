@@ -1,0 +1,108 @@
+<style>
+  hr{
+    margin: 0px;
+    height: 10px;
+    border: 0;
+    box-shadow: inset 0 10px 10px rgba(255,140,0,0.5);
+  }
+  div.row{
+    margin-top: 5px;
+  }
+  div.row>div{
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  div.col{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  th{
+    background-color: orange;
+    color: white;
+  }
+</style>
+
+<div class="container">
+  <%# 店舗名 %>
+  <div class="row">
+    <div class="col-xs-12">
+      <h3><%= @shop.name %>　<small><%= @shop.genre %></small></h3>
+    </div>
+  </div>
+  <hr>
+  <%# メイン画像　サイズとかあとで考える %>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= image_tag @shop.image0, class: 'img-responsive' %>
+    </div>
+  </div>
+
+  <%# サブ画像 　サイズとかあとで考える%>
+  <div class="row">
+    <div class="col-xs-3">
+      <%= image_tag @shop.image1, class: 'img-responsive' %>
+    </div>
+    <div class="col-xs-3">
+      <%= image_tag @shop.image2, class: 'img-responsive' %>
+    </div>
+    <div class="col-xs-3">
+      <%= image_tag @shop.image3, class: 'img-responsive' %>
+    </div>
+    <div class="col-xs-3">
+      <%= image_tag @shop.image4, class: 'img-responsive' %>
+    </div>
+  </div>
+
+  <%# メニュー・チェックインボタン %>
+  <div class="row">
+    <div class="col-xs-6">
+      <button class="btn btn-warning btn-block">メニュー 一覧</button>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-success btn-block">このお店にチェックイン</button>
+    </div>
+  </div>
+
+  <%# 地図・電話 %>
+  <div class="row">
+    <div class="col-xs-6">
+      <button class="btn btn-warning btn-block">地図</button>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-warning btn-block">電話</button>
+    </div>
+  </div>
+
+  <%# 店舗説明 %>
+  <div class="row">
+    <div class="col-xs-12">
+      <p><%= @shop.shop_info %></p>
+    </div>
+  </div>
+
+  <%# その他店舗情報 %>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>営業時間</th>
+            <td><%= @shop.business_time %></td>
+          </tr>
+          <tr>
+            <th>定休日</th>
+            <td><%= @shop.shop_holiday %></td>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <td><%= @shop.address %></td>
+          </tr>
+          <tr>
+            <th>外部リンク</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+  </div>
+</div>

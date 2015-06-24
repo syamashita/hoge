@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'shops/view'
+  get 'shops/:id' => 'shops#show'
 
   get '/' => 'hello#view'
   # The priority is based upon order of creation: first created -> highest priority.
